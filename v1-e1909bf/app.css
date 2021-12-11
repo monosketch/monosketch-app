@@ -1,9 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Roboto:wght@300;400&display=swap");
+.button, .icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+.button:hover, .icon-button:hover {
+  background: #eeeeee;
+}
+.button:active, .icon-button:active {
+  background: #e0e0e0;
+}
+.button:disabled, .icon-button:disabled, .button.disabled, .disabled.icon-button {
+  background: #00000000;
+  cursor: default;
+}
+
+.button-group {
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border-radius: 3.5px;
+  border: 1px solid #555;
+}
+.button-group .button, .button-group .icon-button {
+  border-left: 1px solid #555;
+  color: #555;
+  padding: 2px 4px;
+}
+.button-group .button:first-child, .button-group .icon-button:first-child {
+  border-left: none;
+}
+.button-group .button:hover, .button-group .icon-button:hover {
+  background: #626262;
+  color: #fff;
+}
+.button-group .button.selected, .button-group .selected.icon-button {
+  background: #555;
+  color: #fff;
+}
+
+input {
+  margin: 0;
+}
+
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   overflow-y: hidden;
+  font-family: "Roboto", Arial, serif;
 }
 
 #root {
@@ -31,10 +80,8 @@ html, body {
 #header-layout > .nav-brand {
   height: 100%;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   margin-left: 32px;
-  padding-top: 10px;
 }
 #header-layout h2 {
   font-size: 20px;
@@ -42,6 +89,7 @@ html, body {
   font-family: "Fira Code", Menlo, "Courier New", Courier, monospace;
   font-weight: 500;
   line-height: 18px;
+  margin: 0;
 }
 
 #header-toolbar {
@@ -61,9 +109,6 @@ html, body {
   margin: 0px 20px;
   width: 100%;
 }
-.toolbar.middle .retainable-action-group .btn {
-  width: 65px;
-}
 .toolbar.right {
   margin: 0px 8px;
 }
@@ -79,16 +124,20 @@ html, body {
   background: none;
   color: #252525;
 }
-.toolbar .btn.toolbar-btn {
-  padding: 0.15rem 0.5rem;
+.toolbar .retainable-action-group {
   height: 31px;
+}
+.toolbar .retainable-action-group > .button, .toolbar .retainable-action-group > .icon-button {
+  width: 65px;
+  padding: 0;
+  box-sizing: content-box;
 }
 
 #workspace {
   width: 100%;
   left: 0;
   right: 0;
-  top: 64px;
+  top: 65px;
   bottom: 0;
   position: absolute;
 }
@@ -133,6 +182,7 @@ html, body {
   border: 1px solid #d0d7de;
   padding: 6px 0;
   position: absolute;
+  font-family: "Roboto", Arial, serif;
 }
 .drop-down-menu .hidden-input {
   position: absolute;
@@ -363,7 +413,7 @@ html, body {
   border-top: none;
 }
 .shape-tools .shape-tools__footer {
-  padding: 10px 8px 4px;
+  padding: 10px 8px 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,6 +438,7 @@ html, body {
   width: 100%;
   flex-direction: column;
   padding: 10px 10px;
+  box-sizing: border-box;
 }
 .tsection.small-space {
   padding-top: 4px;
@@ -400,6 +451,7 @@ html, body {
   color: #616161;
   margin-bottom: 10px;
   user-select: none;
+  letter-spacing: 1.2px;
 }
 
 .tool {
@@ -442,26 +494,8 @@ html, body {
   margin-top: 6px;
   margin-right: 6px;
 }
-
-.button, .icon-button {
-  padding: 4px;
-  cursor: pointer;
+.trow .button, .trow .icon-button {
   border-radius: 3px;
-  user-select: none;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-.button:hover, .icon-button:hover {
-  background: #eeeeee;
-}
-.button:active, .icon-button:active {
-  background: #e0e0e0;
-}
-.button:disabled, .icon-button:disabled, .button.disabled, .disabled.icon-button {
-  background: #00000000;
-  cursor: default;
 }
 
 .icon-button {
@@ -494,13 +528,11 @@ html, body {
   background: #fafafa;
 }
 .icon-button.small {
-  width: 20px;
-  height: 26px;
+  width: 19px;
+  height: 23px;
   font-size: 15px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding-top: 5px;
+  line-height: 15px;
+  padding: 0 0 1.2px;
 }
 .icon-button.medium {
   padding: 6px;
@@ -562,6 +594,10 @@ html, body {
 
 .gray-text {
   color: #a0a0a0;
+}
+
+.gray-icon {
+  color: #424242;
 }
 
 .indicator-text {
