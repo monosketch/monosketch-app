@@ -11,7 +11,7 @@ jobs:
       - name: Update artifact
         run: |
           dest=$PWD
-          git clone https://github.com/tuanchauict/MonoSketch.git --branch=release/alpha/1.0.0 --single-branch ../src
+          git clone https://github.com/tuanchauict/MonoSketch.git --branch=release/alpha/1.1.0 --single-branch ../src
           cd ../src
           ./gradlew assemble
           src=$PWD
