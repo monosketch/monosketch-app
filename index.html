@@ -7,36 +7,39 @@
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Mono Sketch</title>
 
-    <link href="v1-c6f6cc9/app.css" rel="stylesheet"/>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z17SPKZ6M"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-7Z17SPKZ6M');
-    </script>
+    <link href="v1-2039919/app.css" rel="stylesheet"/>
+    <script src="v1-2039919/app.js"></script>
 </head>
 
 <body>
-<script src="v1-c6f6cc9/app.js"></script>
-<div id="root">
-    <div id="header-layout">
-        <div class="nav-brand">
-            <h2 id="main-title">Mono<br/>Sketch</h2>
-        </div>
-        <div id="header-toolbar"></div>
+<nav id="main-nav">
+    <div id="nav-left">
+        <h2 class="main-title">
+            <a href="https://monosketch.io" target="_blank">MonoSketch</a>
+        </h2>
     </div>
-    <div id="workspace">
-        <div class="canvas-layout">
-            <div id="monoboard-canvas-container"></div>
-            <div id="monoboard-axis-container"></div>
-        </div>
-        <div id="shape-tools" class="shape-tools"></div>
+    <div id="nav-toolbar-center"></div>
+    <div id="nav-toolbar-right"></div>
+</nav>
+
+<main id="workspace">
+    <div class="canvas-layout">
+        <div id="monoboard-canvas-container"></div>
+        <div id="monoboard-axis-container"></div>
     </div>
-</div>
+</main>
+
+<div id="shape-tools" class="shape-tools"></div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z17SPKZ6M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7Z17SPKZ6M');
+</script>
 </body>
 
 </html>
